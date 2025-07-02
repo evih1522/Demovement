@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What moves you? Text Reveal</title>
+    <!-- Tailwind CSS CDN for basic styling, though custom CSS is also used -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        /* * IMPORTANT: To use 'De Movement Font', you need to have its web font files (e.g., .woff, .woff2).
+         * You must upload these font files to the same hosting service where your HTML file resides.
+         * Then, uncomment and adjust the @font-face rule below to point to your font files.
+         *
+         * REPLACE 'path/to/your/' with the actual relative or absolute path to your font files.
+         * Example: src: url('fonts/de-movement-font.woff2') format('woff2');
+         *
+         * If you don't have the web font files, the browser will fall back to 'Inter' or generic sans-serif.
+         */
+        @font-face {
+            font-family: 'De Movement Font';
+            /* Corrected paths: Assuming font files are in the same directory as the HTML,
+               or adjust if they are in a 'fonts/' subdirectory. */
+            src: url('DeMovement-Font.woff2') format('woff2'),
+                 url('DeMovement-Font.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap; /* Ensures text is visible while font loads */
+        }
+
+        /* Import 'Inter' font as a fallback, or replace with 'De Movement Font' if you have its URL */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            /* Flexbox for centering content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: transparent; /* Background remains transparent */
+            margin: 0;
+            overflow: hidden; /* Hide any overflow during animation */
+            font-family: 'Inter', sans-serif; /* Default font - will be overridden if De Movement Font loads */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            /* Use 'De Movement Font' if loaded, otherwise fall back to 'Inter' or generic sans-serif */
+            font-family: 'De Movement Font', 'Inter', sans-serif;
+            font-size: 80px; /* Pixel unit for consistent sizing */
+            color: white; /* Text color white */
+            /* Ensure text is not selectable during animation */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .bracket {
+            display: inline-block; /* Essential for GSAP transformations */
+            transform-origin: center; /* Ensures transformations like scaling or moving are centered */
+            line-height: 1; /* Adjust line height to prevent extra space around brackets */
+        }
+
+        .text-reveal {
+            opacity: 0; /* Initially hidden, will fade in */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen overflow-hidden">
+    <div class="container">
+        <span class="bracket left-bracket">(</span><span class="text-reveal">What moves you?</span><span class="bracket right-bracket">)</span>
+    </div>
+
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select the elements we'll be animating
+            const leftBracket = document.querySelector('.left-bracket');
+            const rightBracket = document.querySelector('.right-bracket');
+            const newText = document.querySelector('.text-reveal'); // Renamed from empowerText for clarity
+
+            // Set initial state: brackets start very close to the center, text is hidden
+            gsap.set(leftBracket, { x: 30 });  // Move left bracket further right from its natural position
+            gsap.set(rightBracket, { x: -30 }); // Move right bracket further left from its natural position
+            gsap.set(newText, { opacity: 0 }); // Ensure text is hidden initially
+
+            // Initialize a GSAP timeline for sequencing animations
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power2.out", // Smooth easing for the animations
+                    duration: 0.8 // Default duration for each animation step
+                }
+            });
+
+            // Step 1: Brackets open up from their initial close position
+            // Added a 0.4-second delay before this animation starts
+            tl.to(leftBracket, { x: -60, duration: 1, delay: 0.4 }) // Move left bracket further left to open, with a 0.4s delay
+              .to(rightBracket, { x: 60, duration: 1 }, "<") // Move right bracket further right to open, simultaneously
+
+            // Step 2: Reveal the text while brackets are opening
+              .to(newText, { opacity: 1, duration: 0.6 }, "-=0.5") // Fade in text, starting 0.5 seconds before brackets finish opening
+
+            // Step 3: Brackets close back around the text, but leave space
+            // They move back to an 'x' position that creates the desired gap
+              .to(leftBracket, { x: -10, duration: 0.7 }, ">-0.4") // Move left bracket back to a position with space
+              .to(rightBracket, { x: 10, duration: 0.7 }, "<"); // Move right bracket back to a position with space, simultaneously
+        });
+    </script>
+</body>
+</html>
