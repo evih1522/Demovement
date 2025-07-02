@@ -19,9 +19,11 @@
          * If you don't have the web font files, the browser will fall back to 'Inter' or generic sans-serif.
          */
         @font-face {
-            font-family: 'DeMovement-Font';
-            src: url('https://github.com/evih1522/Demovement/blob/013e460bf25320290057c14d6dd24de4d33cc302/DeMovement-Font.woff2') format('woff2'),
-                 url('https://github.com/evih1522/Demovement/blob/818f8ebac8b21337fa28f59f0b5002cd44e12681/DeMovement-Font.woff') format('woff');
+            font-family: 'De Movement Font';
+            /* Corrected paths: Since font files are in the same directory as the HTML,
+               we can directly reference their filenames. */
+            src: url('DeMovement-Font.woff2') format('woff2'),
+                 url('DeMovement-Font.woff') format('woff');
             font-weight: normal;
             font-style: normal;
             font-display: swap; /* Ensures text is visible while font loads */
@@ -47,7 +49,7 @@
             align-items: center;
             /* Use 'De Movement Font' if loaded, otherwise fall back to 'Inter' or generic sans-serif */
             font-family: 'De Movement Font', 'Inter', sans-serif;
-            font-size: 80px; /* Changed back to pixel unit */
+            font-size: 100px; /* Changed back to pixel unit */
             color: white; /* Text color white */
             /* Ensure text is not selectable during animation */
             user-select: none;
@@ -85,8 +87,8 @@
 
             // Set initial state: brackets start very close to the center, text is hidden
             // Adjusted 'x' values back to pixel units
-            gsap.set(leftBracket, { x: 300 });  // Move left bracket further right from its natural position
-            gsap.set(rightBracket, { x: -300 }); // Move right bracket further left from its natural position
+            gsap.set(leftBracket, { x: 30 });  // Move left bracket further right from its natural position
+            gsap.set(rightBracket, { x: -30 }); // Move right bracket further left from its natural position
             gsap.set(empowerText, { opacity: 0 }); // Ensure text is hidden initially
 
             // Initialize a GSAP timeline for sequencing animations
