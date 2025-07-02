@@ -1,663 +1,116 @@
-<!doctype html>
-<html lang="fr-FR">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
-	<link rel="alternate" href="https://www.lesjardinsdelabriquette.fr/la-ferme/" hreflang="fr" />
-<link rel="alternate" href="https://www.lesjardinsdelabriquette.fr/en/the-farm/" hreflang="en" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPOWER Text Reveal</title>
+    <!-- Tailwind CSS CDN for basic styling, though custom CSS is also used -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- GSAP CDN for animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <style>
+        /* * IMPORTANT: To use 'De Movement Font', you need to have its web font files (e.g., .woff, .woff2).
+         * You must upload these font files to the same hosting service where your HTML file resides.
+         * Then, uncomment and adjust the @font-face rule below to point to your font files.
+         *
+         * REPLACE 'path/to/your/' with the actual relative or absolute path to your font files.
+         * Example: src: url('fonts/de-movement-font.woff2') format('woff2');
+         *
+         * If you don't have the web font files, the browser will fall back to 'Inter' or generic sans-serif.
+         */
+        @font-face {
+            font-family: 'De Movement Font';
+            src: url('path/to/your/de-movement-font.woff2') format('woff2'),
+                 url('path/to/your/de-movement-font.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap; /* Ensures text is visible while font loads */
+        }
 
-	<!-- This site is optimized with the Yoast SEO plugin v25.0 - https://yoast.com/wordpress/plugins/seo/ -->
-	<title>La Ferme - Les Jardins de la Briquette</title>
-	<meta name="description" content="Ceci nous a amené (et reliées) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l’exploiter et de la détruire. Basé sur ces principes, on a décidé de transformer un coin de terre prêté par la famille en laboratoire vivant et aire de jeux où tester, apprendre, vivre et grandir." />
-	<link rel="canonical" href="https://www.lesjardinsdelabriquette.fr/la-ferme/" />
-	<meta property="og:locale" content="fr_FR" />
-	<meta property="og:locale:alternate" content="en_GB" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="La Ferme - Les Jardins de la Briquette" />
-	<meta property="og:description" content="Ceci nous a amené (et reliées) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l’exploiter et de la détruire. Basé sur ces principes, on a décidé de transformer un coin de terre prêté par la famille en laboratoire vivant et aire de jeux où tester, apprendre, vivre et grandir." />
-	<meta property="og:url" content="https://www.lesjardinsdelabriquette.fr/la-ferme/" />
-	<meta property="og:site_name" content="Les Jardins de la Briquette" />
-	<meta property="article:modified_time" content="2025-04-30T14:56:45+00:00" />
-	<meta property="og:image" content="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/Violetta-scaled.jpg" />
-	<meta property="og:image:width" content="1711" />
-	<meta property="og:image:height" content="2560" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:label1" content="Durée de lecture estimée" />
-	<meta name="twitter:data1" content="3 minutes" />
-	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/","url":"https://www.lesjardinsdelabriquette.fr/la-ferme/","name":"La Ferme - Les Jardins de la Briquette","isPartOf":{"@id":"https://www.lesjardinsdelabriquette.fr/#website"},"primaryImageOfPage":{"@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/#primaryimage"},"image":{"@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/#primaryimage"},"thumbnailUrl":"https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/Violetta-scaled.jpg","datePublished":"2024-05-10T15:55:10+00:00","dateModified":"2025-04-30T14:56:45+00:00","description":"Ceci nous a amené (et reliées) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l’exploiter et de la détruire. Basé sur ces principes, on a décidé de transformer un coin de terre prêté par la famille en laboratoire vivant et aire de jeux où tester, apprendre, vivre et grandir.","breadcrumb":{"@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/#breadcrumb"},"inLanguage":"fr-FR","potentialAction":[{"@type":"ReadAction","target":["https://www.lesjardinsdelabriquette.fr/la-ferme/"]}]},{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/#primaryimage","url":"https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/Violetta-scaled.jpg","contentUrl":"https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/Violetta-scaled.jpg","width":1711,"height":2560},{"@type":"BreadcrumbList","@id":"https://www.lesjardinsdelabriquette.fr/la-ferme/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.lesjardinsdelabriquette.fr/"},{"@type":"ListItem","position":2,"name":"La Ferme"}]},{"@type":"WebSite","@id":"https://www.lesjardinsdelabriquette.fr/#website","url":"https://www.lesjardinsdelabriquette.fr/","name":"Les Jardins de la Briquette","description":"","publisher":{"@id":"https://www.lesjardinsdelabriquette.fr/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.lesjardinsdelabriquette.fr/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"fr-FR"},{"@type":"Organization","@id":"https://www.lesjardinsdelabriquette.fr/#organization","name":"Les Jardins de la Briquette","url":"https://www.lesjardinsdelabriquette.fr/","logo":{"@type":"ImageObject","inLanguage":"fr-FR","@id":"https://www.lesjardinsdelabriquette.fr/#/schema/logo/image/","url":"https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01.png","contentUrl":"https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01.png","width":2084,"height":2084,"caption":"Les Jardins de la Briquette"},"image":{"@id":"https://www.lesjardinsdelabriquette.fr/#/schema/logo/image/"},"sameAs":["https://www.instagram.com/la_briquette/"]}]}</script>
-	<!-- / Yoast SEO plugin. -->
+        /* Import 'Inter' font as a fallback, or replace with 'De Movement Font' if you have its URL */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+        body {
+            /* Flexbox for centering content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: transparent; /* Background remains transparent */
+            margin: 0;
+            overflow: hidden; /* Hide any overflow during animation */
+            font-family: 'Inter', sans-serif; /* Default font - will be overridden if De Movement Font loads */
+        }
 
-<link rel='dns-prefetch' href='//www.googletagmanager.com' />
-<link rel="alternate" type="application/rss+xml" title="Les Jardins de la Briquette &raquo; Flux" href="https://www.lesjardinsdelabriquette.fr/feed/" />
-<link rel="alternate" type="application/rss+xml" title="Les Jardins de la Briquette &raquo; Flux des commentaires" href="https://www.lesjardinsdelabriquette.fr/comments/feed/" />
-		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.4.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
-		<!-- Remarque : MonsterInsights n’est actuellement pas configuré sur ce site. Le propriétaire doit authentifier son compte Google Analytics dans les réglages de MonsterInsights.  -->
-					<!-- No tracking code set -->
-				<!-- / Google Analytics by MonsterInsights -->
-		<script>
-window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8"}};
-/*! This file is auto-generated */
-!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\ud83d\udd25","\ud83d\udc26\u200b\ud83d\udd25")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
-</script>
-<link rel='stylesheet' id='sbi_styles-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.8.0' media='all' />
-<style id='wp-emoji-styles-inline-css'>
+        .container {
+            display: flex;
+            align-items: center;
+            /* Use 'De Movement Font' if loaded, otherwise fall back to 'Inter' or generic sans-serif */
+            font-family: 'De Movement Font', 'Inter', sans-serif;
+            font-size: 80px; /* Changed back to pixel unit */
+            color: white; /* Text color white */
+            /* Ensure text is not selectable during animation */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
 
-	img.wp-smiley, img.emoji {
-		display: inline !important;
-		border: none !important;
-		box-shadow: none !important;
-		height: 1em !important;
-		width: 1em !important;
-		margin: 0 0.07em !important;
-		vertical-align: -0.1em !important;
-		background: none !important;
-		padding: 0 !important;
-	}
-</style>
-<style id='global-styles-inline-css'>
-:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 800px;--wp--style--global--wide-size: 1200px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.wp-site-blocks) > * { margin-block-start: 24px; margin-block-end: 0; }:where(.wp-site-blocks) > :first-child { margin-block-start: 0; }:where(.wp-site-blocks) > :last-child { margin-block-end: 0; }:root { --wp--style--block-gap: 24px; }:root :where(.is-layout-flow) > :first-child{margin-block-start: 0;}:root :where(.is-layout-flow) > :last-child{margin-block-end: 0;}:root :where(.is-layout-flow) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-constrained) > :first-child{margin-block-start: 0;}:root :where(.is-layout-constrained) > :last-child{margin-block-end: 0;}:root :where(.is-layout-constrained) > *{margin-block-start: 24px;margin-block-end: 0;}:root :where(.is-layout-flex){gap: 24px;}:root :where(.is-layout-grid){gap: 24px;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
-:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
-</style>
-<link rel='stylesheet' id='hello-elementor-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/themes/hello-elementor/style.min.css?ver=3.3.0' media='all' />
-<link rel='stylesheet' id='hello-elementor-theme-style-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/themes/hello-elementor/theme.min.css?ver=3.3.0' media='all' />
-<link rel='stylesheet' id='hello-elementor-header-footer-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/themes/hello-elementor/header-footer.min.css?ver=3.3.0' media='all' />
-<link rel='stylesheet' id='elementor-frontend-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1746013439' media='all' />
-<link rel='stylesheet' id='elementor-post-4-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/post-4.css?ver=1746013439' media='all' />
-<link rel='stylesheet' id='widget-image-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='e-animation-slideInRight-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/animations/styles/slideInRight.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='widget-nav-menu-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/custom-pro-widget-nav-menu.min.css?ver=1746013439' media='all' />
-<link rel='stylesheet' id='widget-heading-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='e-animation-fadeInUp-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/animations/styles/fadeInUp.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='e-animation-shrink-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/animations/styles/e-animation-shrink.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='sbistyles-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/css/sbi-styles.min.css?ver=6.8.0' media='all' />
-<link rel='stylesheet' id='swiper-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5' media='all' />
-<link rel='stylesheet' id='bpfwe-select2-style-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/e-select2/css/e-select2.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='bpfwe-widget-style-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/better-post-filter-widgets-for-elementor/assets/css/bpfwe-widget.min.css?ver=1.3.0' media='all' />
-<link rel='stylesheet' id='e-swiper-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/css/conditionals/e-swiper.min.css?ver=3.28.4' media='all' />
-<link rel='stylesheet' id='e-sticky-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/css/modules/sticky.min.css?ver=3.28.3' media='all' />
-<link rel='stylesheet' id='elementor-post-1523-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/post-1523.css?ver=1746026924' media='all' />
-<link rel='stylesheet' id='elementor-post-1602-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/post-1602.css?ver=1746022403' media='all' />
-<link rel='stylesheet' id='elementor-post-609-css' href='https://www.lesjardinsdelabriquette.fr/wp-content/uploads/elementor/css/post-609.css?ver=1746022994' media='all' />
-<script src="https://www.lesjardinsdelabriquette.fr/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+        .bracket {
+            display: inline-block; /* Essential for GSAP transformations */
+            transform-origin: center; /* Ensures transformations like scaling or moving are centered */
+            line-height: 1; /* Adjust line height to prevent extra space around brackets */
+        }
 
-<!-- Extrait de code de la balise Google (gtag.js) ajouté par Site Kit -->
+        .text-reveal {
+            opacity: 0; /* Initially hidden, will fade in */
+            white-space: nowrap; /* Prevent "EMPOWER" from wrapping */
+        }
 
-<!-- Extrait Google Analytics ajouté par Site Kit -->
-<script src="https://www.googletagmanager.com/gtag/js?id=GT-WKG6ND3Q" id="google_gtagjs-js" async></script>
-<script id="google_gtagjs-js-after">
-window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
-gtag("set","linker",{"domains":["www.lesjardinsdelabriquette.fr"]});
-gtag("js", new Date());
-gtag("set", "developer_id.dZTNiMT", true);
-gtag("config", "GT-WKG6ND3Q");
-</script>
-
-<!-- Extrait de code de la balise Google de fin (gtag.js) ajouté par Site Kit -->
-<link rel="https://api.w.org/" href="https://www.lesjardinsdelabriquette.fr/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.lesjardinsdelabriquette.fr/wp-json/wp/v2/pages/1523" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.lesjardinsdelabriquette.fr/xmlrpc.php?rsd" />
-<meta name="generator" content="WordPress 6.8" />
-<link rel='shortlink' href='https://www.lesjardinsdelabriquette.fr/?p=1523' />
-<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.lesjardinsdelabriquette.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.lesjardinsdelabriquette.fr%2Fla-ferme%2F" />
-<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.lesjardinsdelabriquette.fr/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.lesjardinsdelabriquette.fr%2Fla-ferme%2F&#038;format=xml" />
-<meta name="generator" content="Site Kit by Google 1.151.0" /><meta name="description" content="Ceci nous a amené (et reliées) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l’exploiter et de la détruire. Basé sur ces principes, on a décidé de transformer un coin de terre prêté par la famille en laboratoire vivant et aire de jeux où tester, apprendre, vivre et grandir.">
-<meta name="generator" content="Elementor 3.28.4; features: e_font_icon_svg, additional_custom_breakpoints, e_local_google_fonts, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
-			<style>
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
-					background-image: none !important;
-				}
-				@media screen and (max-height: 1024px) {
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-				@media screen and (max-height: 640px) {
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
-					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
-						background-image: none !important;
-					}
-				}
-			</style>
-			<link rel="icon" href="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/cropped-Flavicon-32x32.png" sizes="32x32" />
-<link rel="icon" href="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/cropped-Flavicon-192x192.png" sizes="192x192" />
-<link rel="apple-touch-icon" href="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/cropped-Flavicon-180x180.png" />
-<meta name="msapplication-TileImage" content="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/cropped-Flavicon-270x270.png" />
+        /* Removed media query as sizing is now fixed in px */
+    </style>
 </head>
-<body class="wp-singular page-template-default page page-id-1523 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor theme-default elementor-default elementor-kit-4 elementor-page elementor-page-1523">
-
-
-<a class="skip-link screen-reader-text" href="#content">Aller au contenu</a>
-
-		<header data-elementor-type="header" data-elementor-id="1602" class="elementor elementor-1602 elementor-location-header" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-41b2c5ea e-con-full e-flex e-con e-parent" data-id="41b2c5ea" data-element_type="container" id="top">
-				<div class="elementor-element elementor-element-626ca1b3 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="626ca1b3" data-element_type="widget" data-widget_type="theme-site-logo.default">
-				<div class="elementor-widget-container">
-											<a href="https://www.lesjardinsdelabriquette.fr">
-			<img fetchpriority="high" width="709" height="306" src="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/Logo-header-website-01-1.png" class="attachment-full size-full wp-image-4065" alt="" srcset="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/Logo-header-website-01-1.png 709w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/Logo-header-website-01-1-300x129.png 300w" sizes="(max-width: 709px) 100vw, 709px" />				</a>
-											</div>
-				</div>
-				<div class="elementor-element elementor-element-45a61727 elementor-nav-menu--stretch animated-slow elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-mobile elementor-nav-menu--toggle elementor-nav-menu--burger elementor-invisible elementor-widget elementor-widget-nav-menu" data-id="45a61727" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;_animation&quot;:&quot;slideInRight&quot;,&quot;_animation_delay&quot;:800,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;svg class=\&quot;e-font-icon-svg e-fas-angle-down\&quot; viewBox=\&quot;0 0 320 512\&quot; xmlns=\&quot;http:\/\/www.w3.org\/2000\/svg\&quot;&gt;&lt;path d=\&quot;M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z\&quot;&gt;&lt;\/path&gt;&lt;\/svg&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;layout&quot;:&quot;horizontal&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
-				<div class="elementor-widget-container">
-								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none e--animation-slow">
-				<ul id="menu-1-45a61727" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1523 current_page_item menu-item-4166"><a href="https://www.lesjardinsdelabriquette.fr/la-ferme/" aria-current="page" class="elementor-item elementor-item-active">La Ferme</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4157"><a href="https://www.lesjardinsdelabriquette.fr/la-carte/" class="elementor-item">La Carte</a>
-<ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4099"><a href="https://www.lesjardinsdelabriquette.fr/carte-des-vins/" class="elementor-sub-item">La Carte des Vins</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4101"><a href="https://www.lesjardinsdelabriquette.fr/evenements/" class="elementor-item">Événements</a></li>
-<li class="lang-item lang-item-5 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-2322-en"><a href="https://www.lesjardinsdelabriquette.fr/en/the-farm/" hreflang="en-GB" lang="en-GB" class="elementor-item">EN</a></li>
-</ul>			</nav>
-					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Permuter le menu" aria-expanded="false">
-			<svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open e-font-icon-svg e-fas-plus" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close e-font-icon-svg e-fas-times" viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>		</div>
-					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
-				<ul id="menu-2-45a61727" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1523 current_page_item menu-item-4166"><a href="https://www.lesjardinsdelabriquette.fr/la-ferme/" aria-current="page" class="elementor-item elementor-item-active" tabindex="-1">La Ferme</a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4157"><a href="https://www.lesjardinsdelabriquette.fr/la-carte/" class="elementor-item" tabindex="-1">La Carte</a>
-<ul class="sub-menu elementor-nav-menu--dropdown">
-	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4099"><a href="https://www.lesjardinsdelabriquette.fr/carte-des-vins/" class="elementor-sub-item" tabindex="-1">La Carte des Vins</a></li>
-</ul>
-</li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4101"><a href="https://www.lesjardinsdelabriquette.fr/evenements/" class="elementor-item" tabindex="-1">Événements</a></li>
-<li class="lang-item lang-item-5 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-2322-en"><a href="https://www.lesjardinsdelabriquette.fr/en/the-farm/" hreflang="en-GB" lang="en-GB" class="elementor-item" tabindex="-1">EN</a></li>
-</ul>			</nav>
-						</div>
-				</div>
-				</div>
-				</header>
-		
-<main id="content" class="site-main post-1523 page type-page status-publish has-post-thumbnail hentry">
-
-	
-	<div class="page-content">
-				<div data-elementor-type="wp-page" data-elementor-id="1523" class="elementor elementor-1523" data-elementor-post-type="page">
-				<div class="elementor-element elementor-element-6333fa0 e-flex e-con-boxed e-con e-parent" data-id="6333fa0" data-element_type="container">
-					<div class="e-con-inner">
-		<div class="elementor-element elementor-element-444bd62 e-con-full e-flex e-con e-child" data-id="444bd62" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				</div>
-		<div class="elementor-element elementor-element-9781b93 e-con-full e-flex e-con e-child" data-id="9781b93" data-element_type="container">
-		<div class="elementor-element elementor-element-acbfc23 e-con-full e-flex e-con e-child" data-id="acbfc23" data-element_type="container">
-				<div class="elementor-element elementor-element-bb5a87d elementor-widget elementor-widget-heading" data-id="bb5a87d" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">La Ferme</h2>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-96b4c3f e-con-full e-flex e-con e-child" data-id="96b4c3f" data-element_type="container">
-				<div class="elementor-element elementor-element-b8f3f28 elementor-widget elementor-widget-text-editor" data-id="b8f3f28" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p><span style="font-weight: 400;">Nous avons étudié, expérimenté et beaucoup lu pour nourrir nos curiosités liées à la biodiversité, la résilience, et les motifs qui animent le vivant. </span></p><p><span style="font-weight: 400;">Ceci nous a amené (et reliées) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l’exploiter et de la détruire. Basé sur ces principes, on a décidé de transformer un coin de terre prêté par la famille en laboratoire vivant et aire de jeux où tester, apprendre, vivre et grandir.</span></p>								</div>
-				</div>
-				</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-60d555a e-con-full e-flex e-con e-parent" data-id="60d555a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-84fe728 e-con-full e-flex e-con e-child" data-id="84fe728" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:50,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:50,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-5e1fc83 e-con-full e-flex e-con e-child" data-id="5e1fc83" data-element_type="container">
-				<div class="elementor-element elementor-element-cff23bd animated-slow elementor-widget elementor-widget-heading" data-id="cff23bd" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h1 class="elementor-heading-title elementor-size-default">2025</h1>				</div>
-				</div>
-				<div class="elementor-element elementor-element-eed90b6 elementor-widget elementor-widget-text-editor" data-id="eed90b6" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Cette année, nous construisons sur les bases solides de notre première saison.<br /><br />Nous avons tiré des leçons précieuses — des réussites comme des difficultés — et avons affiné notre approche. La planification du jardin a évolué, et nous ajustons nos méthodes de culture pour plus d’efficacité et de rendement.<br /><br />Nous testons les associations de plantes pour optimiser l’espace, et nous ajoutons de nouvelles productions : nos premiers champignons, une petite culture de micropousses, et une nouvelle parcelle dédiée aux courges. Les fraisiers reçoivent plus d’attention cette année, et notre jardin d’aromatiques s’agrandit avec de nombreuses nouvelles variétés, à la fois culinaires et médicinales.<br /><br />C’est une saison placée sous le signe de l’évolution, des essais, et d’un lien toujours plus fort avec la terre. Nous avons hâte de voir ce qu’elle nous réserve.</p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-93df582 e-con-full e-flex e-con e-child" data-id="93df582" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_lazyload&quot;:&quot;yes&quot;,&quot;background_slideshow_gallery&quot;:[],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-6b23865 e-con-full e-flex e-con e-child" data-id="6b23865" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:100,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:50,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-b627bc2 e-con-full e-flex e-con e-child" data-id="b627bc2" data-element_type="container">
-				<div class="elementor-element elementor-element-4e6eb12 animated-slow elementor-widget elementor-widget-heading" data-id="4e6eb12" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h1 class="elementor-heading-title elementor-size-default">2024</h1>				</div>
-				</div>
-				<div class="elementor-element elementor-element-a3d20eb elementor-widget elementor-widget-text-editor" data-id="a3d20eb" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Cette première saison fut un tourbillon de croissance, de couleurs et de saveurs.<br /><br />Guidés par les enseignements de Jean-Martin Fortier et Richard Perkins, nous avons façonné notre jardin avec les mains et le cœur. Ce qui n&rsquo;était qu&rsquo;un rêve modeste a fleuri en une abondance inattendue—bien au-delà de nos plans et espérances.<br /><br />Nous avons partagé nos récoltes avec des chefs locaux, un marché bio du coin, et bien sûr, les convives de notre propre table.</p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-616f4b1 e-con-full e-flex e-con e-child" data-id="616f4b1" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_lazyload&quot;:&quot;yes&quot;,&quot;background_slideshow_gallery&quot;:[],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-5dd327f e-con-full e-flex e-con e-child" data-id="5dd327f" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:100,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:50,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-8364725 e-con-full e-flex e-con e-child" data-id="8364725" data-element_type="container">
-				<div class="elementor-element elementor-element-5d45f2a elementor-widget elementor-widget-text-editor" data-id="5d45f2a" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>La terre a offert avec générosité : des légumes éclatants de vie, des herbes parfumées au soleil du matin, des fleurs dansant au rythme du vent. Même les jeunes arbres fruitiers et les petits fruits ont livré leurs premières douceurs.<br /><br />Nos poules vivaient libres et heureuses dans leur poulailler mobile, picorant, grattant, prenant des bains de soleil. Leurs œufs, au jaune profond, ont enrichi nos desserts et illuminé nos brunchs.<br /><br />Une saison de gratitude, de surprises, et d’une profonde connexion—à la terre, à notre nourriture, et à ceux que nous nourrissons.</p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-5b4ed51 e-con-full e-flex e-con e-child" data-id="5b4ed51" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:1994,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2024-6.jpg&quot;},{&quot;id&quot;:1998,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2024-4.jpg&quot;},{&quot;id&quot;:1995,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2024-5.jpg&quot;},{&quot;id&quot;:2010,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2023-5.jpg&quot;}],&quot;background_slideshow_lazyload&quot;:&quot;yes&quot;,&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-2172cc1 e-con-full e-flex e-con e-child" data-id="2172cc1" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:150,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:80,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-88052d0 e-con-full e-flex e-con e-child" data-id="88052d0" data-element_type="container">
-				<div class="elementor-element elementor-element-ae1a360 elementor-widget elementor-widget-heading" data-id="ae1a360" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">2023</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-00e3d84 elementor-widget elementor-widget-text-editor" data-id="00e3d84" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p><span style="font-weight: 400;">Suivant les traditions Japonaises, on a inoculé des bûches avec des spores de shiitaké et pleurotes pour cultiver nos propres champignons. Nous sommes impatients de voir ce que cela donnera.</span></p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-bbaa5e2 e-con-full e-flex e-con e-child" data-id="bbaa5e2" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:2007,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2023-2-scaled.jpg&quot;},{&quot;id&quot;:2006,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2023-1-scaled.jpg&quot;},{&quot;id&quot;:2009,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2023-4.jpg&quot;},{&quot;id&quot;:2008,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2023-3.jpg&quot;},{&quot;id&quot;:1997,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2024-2.jpg&quot;},{&quot;id&quot;:1996,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2024-1.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-6531e53 e-con-full e-flex e-con e-child" data-id="6531e53" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:200,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:110,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-2d2d3b8 e-con-full e-flex e-con e-child" data-id="2d2d3b8" data-element_type="container">
-				<div class="elementor-element elementor-element-212d04d elementor-widget elementor-widget-heading" data-id="212d04d" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">2022</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-35c6827 elementor-widget elementor-widget-text-editor" data-id="35c6827" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p><span style="font-weight: 400;">Nous avons planté une forêt jardin en agro-foresterie syntropique en suivant les conseils d&rsquo;Ernst Götsch, qui au Brésil pratique cette méthode hyper productive avec la régénération au centre.</span></p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-d56faf8 e-con-full e-flex e-con e-child" data-id="d56faf8" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:2020,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2022-3.jpg&quot;},{&quot;id&quot;:2023,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2022-5.jpg&quot;},{&quot;id&quot;:2016,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2022-1-scaled.jpg&quot;},{&quot;id&quot;:2021,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2022-4.jpg&quot;},{&quot;id&quot;:2019,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2022-2-scaled.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-c44053f e-con-full e-flex e-con e-child" data-id="c44053f" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:250,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:140,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-b22939c e-con-full e-flex e-con e-child" data-id="b22939c" data-element_type="container">
-				<div class="elementor-element elementor-element-9fb4889 elementor-widget elementor-widget-heading" data-id="9fb4889" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">2021</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-67f8bbf elementor-widget elementor-widget-text-editor" data-id="67f8bbf" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p><span style="font-weight: 400;">On a assisté à la plantation d&rsquo;une forêt Miyawaki de 12&rsquo;000 arbres avec la méthode du botaniste Japonais Akira Miyawaki.</span></p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-194a38a e-con-full e-flex e-con e-child" data-id="194a38a" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[{&quot;id&quot;:2469,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2021-5-scaled.jpg&quot;},{&quot;id&quot;:2470,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/IMG_20240513_200256-scaled.jpg&quot;},{&quot;id&quot;:2034,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2021-2.jpg&quot;},{&quot;id&quot;:2468,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/IMG_20240513_200306-scaled.jpg&quot;},{&quot;id&quot;:2032,&quot;url&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/2021-1.jpg&quot;}],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-6b0b56c e-con-full e-flex e-con e-child" data-id="6b0b56c" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset&quot;:300,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_offset_mobile&quot;:170,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;laptop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_effects_offset&quot;:0,&quot;sticky_anchor_link_offset&quot;:0}">
-		<div class="elementor-element elementor-element-fddc60a e-con-full e-flex e-con e-child" data-id="fddc60a" data-element_type="container">
-				<div class="elementor-element elementor-element-3e13a95 elementor-widget elementor-widget-text-editor" data-id="3e13a95" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p><span style="font-weight: 400;">Tous ces projets prennent du temps. Le temps, on en a, mais il ne faut pas le gâcher. C&rsquo;est pour cela que nous avons tout réalisé en micro-entreprises à petite échelle. On apprend tout au long de nos expériences. La planification précise nous permet de voir venir les obstacles. Quand on se trompe, on n&rsquo;en souffre moins les conséquences.</span></p><p><span style="font-weight: 400;">Comme mentionné dans les exemples précédents, nous investissons nos efforts </span><span style="font-weight: 400;">échelonnés dans le temps</span><span style="font-weight: 400;">. À court terme, les légumes et les œufs nous permettent de servir de magnifiques tartines et salades à la guinguette. À moyen terme les petits fruits, herbes aromatiques et plantes médicinales porteront leurs fruits et à long terme les grands arbres fruitiers à leur tour deviendront productif.</span></p><p><span style="font-weight: 400;">Notre jardin est un lieu de rencontre entre vivants à travers le temps. Il est la réponse à la question : « petons en tant qu&rsquo;humains vivre vraiment en symbiose avec la nature ? L&rsquo;enrichir en s&rsquo;enrichissant ? La nourrir en se nourrissant ? » Si la réponse est oui &#8230; On vous le dira.</span></p>								</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-70683e4 e-con-full e-flex e-con e-child" data-id="70683e4" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;slideshow&quot;,&quot;background_slideshow_gallery&quot;:[],&quot;background_slideshow_loop&quot;:&quot;yes&quot;,&quot;background_slideshow_slide_duration&quot;:5000,&quot;background_slideshow_slide_transition&quot;:&quot;fade&quot;,&quot;background_slideshow_transition_duration&quot;:500}">
-				<div class="elementor-element elementor-element-b4dc86a elementor-widget elementor-widget-image" data-id="b4dc86a" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img decoding="async" width="2084" height="2084" src="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01.png" class="attachment-full size-full wp-image-23" alt="La briquette branded tile" srcset="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01.png 2084w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-300x300.png 300w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-1024x1024.png 1024w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-150x150.png 150w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-768x768.png 768w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-1536x1536.png 1536w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/03/La-Briq-Insta-Squares-v1-01-2048x2048.png 2048w" sizes="(max-width: 2084px) 100vw, 2084px" />															</div>
-				</div>
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-e1392a1 e-con-full e-flex e-con e-parent" data-id="e1392a1" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-49fe971 e-flex e-con-boxed e-con e-child" data-id="49fe971" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-f75a249 e-con-full e-flex e-con e-parent" data-id="f75a249" data-element_type="container">
-		<div class="elementor-element elementor-element-6b2036e e-flex e-con-boxed e-con e-child" data-id="6b2036e" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-5c81998 elementor-widget elementor-widget-heading" data-id="5c81998" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Midi &</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-2c461c3 elementor-widget elementor-widget-heading" data-id="2c461c3" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Soir</h2>				</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-23aca4a elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="23aca4a" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-955f413 e-flex e-con-boxed e-con e-child" data-id="955f413" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-b463420 elementor-widget elementor-widget-heading" data-id="b463420" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Du Jeudi</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-e248598 elementor-widget elementor-widget-heading" data-id="e248598" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Au Dimanche</h2>				</div>
-				</div>
-					</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-371e206 e-con-full e-flex e-con e-parent" data-id="371e206" data-element_type="container">
-		<div class="elementor-element elementor-element-99cf58d e-flex e-con-boxed e-con e-child" data-id="99cf58d" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-841ede5 elementor-hidden-mobile elementor-widget-tablet__width-inherit elementor-widget elementor-widget-image" data-id="841ede5" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img decoding="async" width="521" height="426" src="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/placeholder-glasses1.png" class="attachment-full size-full wp-image-569" alt="" srcset="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/placeholder-glasses1.png 521w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/placeholder-glasses1-300x245.png 300w" sizes="(max-width: 521px) 100vw, 521px" />															</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-8e0bf12 elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="8e0bf12" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-34054a7 elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="34054a7" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-ac67422 elementor-hidden-mobile elementor-widget elementor-widget-image" data-id="ac67422" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="492" height="453" src="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/Placeholder-glasses2.png" class="attachment-full size-full wp-image-570" alt="" srcset="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/Placeholder-glasses2.png 492w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/04/Placeholder-glasses2-300x276.png 300w" sizes="(max-width: 492px) 100vw, 492px" />															</div>
-				</div>
-					</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-d9d5aca e-con-full e-flex e-con e-parent" data-id="d9d5aca" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-7e91c61 e-flex e-con-boxed e-con e-child" data-id="7e91c61" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-15a93d6 elementor-widget elementor-widget-heading" data-id="15a93d6" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">du 24 mai au </h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-a298b39 elementor-widget elementor-widget-heading" data-id="a298b39" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">30 septembre</h2>				</div>
-				</div>
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-7e966b9 elementor-hidden-tablet elementor-hidden-mobile e-flex e-con-boxed e-con e-child" data-id="7e966b9" data-element_type="container">
-					<div class="e-con-inner">
-					</div>
-				</div>
-		<div class="elementor-element elementor-element-a5d43ef e-flex e-con-boxed e-con e-child" data-id="a5d43ef" data-element_type="container">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-4d3cb32 elementor-widget elementor-widget-heading" data-id="4d3cb32" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="https://bookings.zenchef.com/results?rid=366091&#038;pid=1001" target="_blank">Réserver  votre</a></h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-9ef102e elementor-widget elementor-widget-heading" data-id="9ef102e" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="https://bookings.zenchef.com/results?rid=366091&#038;pid=1001" target="_blank">table ici</a></h2>				</div>
-				</div>
-					</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-341214b e-con-full e-flex e-con e-parent" data-id="341214b" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-				<div class="elementor-element elementor-element-d527b70 elementor-widget__width-inherit elementor-absolute elementor-widget elementor-widget-image" data-id="d527b70" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="1150" height="1527" src="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/beetroot.png" class="attachment-full size-full wp-image-1234" alt="" srcset="https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/beetroot.png 1150w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/beetroot-226x300.png 226w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/beetroot-771x1024.png 771w, https://www.lesjardinsdelabriquette.fr/wp-content/uploads/2024/05/beetroot-768x1020.png 768w" sizes="(max-width: 1150px) 100vw, 1150px" />															</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-3a58a42 e-flex e-con-boxed e-con e-parent" data-id="3a58a42" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-					<div class="e-con-inner">
-				<div class="elementor-element elementor-element-2813023 elementor-widget elementor-widget-html" data-id="2813023" data-element_type="widget" data-widget_type="html.default">
-				<div class="elementor-widget-container">
-					<!-- Zenchef Widget SDK -->
-<script>; (function (d, s, id) {const el = d.getElementsByTagName(s)[0]; if (d.getElementById(id) || el.parentNode == null) {return;} var js = d.createElement(s); js.id = id; js.async = true; js.src = 'https://sdk.zenchef.com/v1/sdk.min.js'; el.parentNode.insertBefore(js, el);})(document, 'script', 'zenchef-sdk')</script>
-<div class="zc-widget-config" data-restaurant="366091"></div>				</div>
-				</div>
-					</div>
-				</div>
-				</div>
-		
-		
-			</div>
-
-	
-</main>
-
-			<footer data-elementor-type="footer" data-elementor-id="609" class="elementor elementor-609 elementor-location-footer" data-elementor-post-type="elementor_library">
-			<div class="elementor-element elementor-element-423536ef e-con-full e-flex e-con e-parent" data-id="423536ef" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-		<div class="elementor-element elementor-element-c08b1e7 e-con-full e-flex e-con e-child" data-id="c08b1e7" data-element_type="container">
-				<div class="elementor-element elementor-element-7bd597e elementor-widget elementor-widget-sbi-widget" data-id="7bd597e" data-element_type="widget" data-widget_type="sbi-widget.default">
-				<div class="elementor-widget-container">
-					
-<div id="sb_instagram"  class="sbi sbi_mob_col_2 sbi_tab_col_6 sbi_col_6 sbi_width_resp" style="padding-bottom: 50px;" data-feedid="*2"  data-res="full" data-cols="6" data-colsmobile="2" data-colstablet="6" data-num="6" data-nummobile="2" data-item-padding="25" data-shortcode-atts="{&quot;feed&quot;:&quot;2&quot;}"  data-postid="1523" data-locatornonce="1290443cad" data-imageaspectratio="1:1" data-sbi-flags="favorLocal">
-	
-    <div id="sbi_images"  style="gap: 50px;">
-		<div class="sbi_item sbi_type_image sbi_new sbi_transition" id="sbi_18082303513673317" data-date="1745868165">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/p/DJAHfveNUBa/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra5-1.cdninstagram.com/v/t51.29350-15/493991982_1881839415554297_8642255785359352791_n.heic?stp=dst-jpg_e35_tt6&#038;_nc_cat=102&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=P6CkZfcAXggQ7kNvwFEOb1d&#038;_nc_oc=AdnmIzovUH_GVP4PjZfjPpi11KazdNGqCWyV9Ppx6eiKlB7iucRxqijsmXrve25nyMI&#038;_nc_zt=23&#038;_nc_ht=scontent-fra5-1.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfHaX7DKBPHxo_fm_3BG4BOD_YARgd6ZJ9RDX_xf9qN8rA&#038;oe=6817B5FC" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra5-1.cdninstagram.com\/v\/t51.29350-15\/493991982_1881839415554297_8642255785359352791_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=P6CkZfcAXggQ7kNvwFEOb1d&amp;_nc_oc=AdnmIzovUH_GVP4PjZfjPpi11KazdNGqCWyV9Ppx6eiKlB7iucRxqijsmXrve25nyMI&amp;_nc_zt=23&amp;_nc_ht=scontent-fra5-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHaX7DKBPHxo_fm_3BG4BOD_YARgd6ZJ9RDX_xf9qN8rA&amp;oe=6817B5FC&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra5-1.cdninstagram.com\/v\/t51.29350-15\/493991982_1881839415554297_8642255785359352791_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=P6CkZfcAXggQ7kNvwFEOb1d&amp;_nc_oc=AdnmIzovUH_GVP4PjZfjPpi11KazdNGqCWyV9Ppx6eiKlB7iucRxqijsmXrve25nyMI&amp;_nc_zt=23&amp;_nc_ht=scontent-fra5-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHaX7DKBPHxo_fm_3BG4BOD_YARgd6ZJ9RDX_xf9qN8rA&amp;oe=6817B5FC&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/493991982_1881839415554297_8642255785359352791_n.heiclow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/493991982_1881839415554297_8642255785359352791_n.heicfull.webp&quot;}">
-            <span class="sbi-screenreader">Quand on parle de permaculture… 🥰
-Est-ce que </span>
-            	                    <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="Quand on parle de permaculture… 🥰
-Est-ce que vous saviez qu&#039;on s’est rencontrés à @terraltapermaculture au Portugal ?
-Machiel était apprenti formateur et moi, étudiante puis responsable de la cuisine. Pas mal, non ?
-La rencontre d’une Franco-Suisse et d’un Belge au milieu de la forêt magique de Sintra !
-
-Depuis, la permaculture fait partie de notre vie.
-On utilise ses outils pour prendre des décisions, lancer de nouveaux projets, organiser notre travail.
-C’est tellement sensé de se laisser guider par les principes qui animent la nature, pour vivre une vie plus alignée avec les lois qu’on observe chaque jour.">
-        </a>
+<body class="flex items-center justify-center min-h-screen overflow-hidden">
+    <div class="container">
+        <span class="bracket left-bracket">(</span><span class="text-reveal">EMPOWER</span><span class="bracket right-bracket">)</span>
     </div>
-</div><div class="sbi_item sbi_type_image sbi_new sbi_transition" id="sbi_18033615473640181" data-date="1745776664">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/p/DI9Y-NqN6Rj/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra5-2.cdninstagram.com/v/t51.29350-15/494007481_1211176954061654_1271703160935122761_n.heic?stp=dst-jpg_e35_tt6&#038;_nc_cat=109&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=QWOaq_PnPp0Q7kNvwHNDSes&#038;_nc_oc=AdmTTSdCxtJzYn5iUpHPtKo-HYcvcTTx2nMj1gD-UaZoAd31XfhE7dMtPQwW6zDdJVs&#038;_nc_zt=23&#038;_nc_ht=scontent-fra5-2.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfGGOjOYmCPfJH387E970OeEeJsC0ksspdKkZw6mOCbP_g&#038;oe=6817A0A8" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra5-2.cdninstagram.com\/v\/t51.29350-15\/494007481_1211176954061654_1271703160935122761_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=QWOaq_PnPp0Q7kNvwHNDSes&amp;_nc_oc=AdmTTSdCxtJzYn5iUpHPtKo-HYcvcTTx2nMj1gD-UaZoAd31XfhE7dMtPQwW6zDdJVs&amp;_nc_zt=23&amp;_nc_ht=scontent-fra5-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfGGOjOYmCPfJH387E970OeEeJsC0ksspdKkZw6mOCbP_g&amp;oe=6817A0A8&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra5-2.cdninstagram.com\/v\/t51.29350-15\/494007481_1211176954061654_1271703160935122761_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=QWOaq_PnPp0Q7kNvwHNDSes&amp;_nc_oc=AdmTTSdCxtJzYn5iUpHPtKo-HYcvcTTx2nMj1gD-UaZoAd31XfhE7dMtPQwW6zDdJVs&amp;_nc_zt=23&amp;_nc_ht=scontent-fra5-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfGGOjOYmCPfJH387E970OeEeJsC0ksspdKkZw6mOCbP_g&amp;oe=6817A0A8&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/494007481_1211176954061654_1271703160935122761_n.heiclow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/494007481_1211176954061654_1271703160935122761_n.heicfull.webp&quot;}">
-            <span class="sbi-screenreader">Ça y est, les réservations sont ouvertes !
-À pa</span>
-            	                    <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="Ça y est, les réservations sont ouvertes !
-À partir du 18 mai, nos brunches du dimanche débarquent de 10h à 13h !
-Au menu : du fait maison salé/sucré, les incroyables croissants de chez @laboutiquej2b des fruits frais, charcuteries &amp; fromages locaux, œufs à la coque de nos poules, pain bio au levain de chez l’Ami Pellini… et tout ça qui change au fil des saisons.
-Sans oublier le café de chez @bonjour_omnino__mulhouse &amp; les tisanes fraîches du jardin à volonté !
 
-Réservez vite, les places sont limitées !
-#BrunchDuDimanche #BrunchLokal #FaitMaison #BonnesChoses">
-        </a>
-    </div>
-</div><div class="sbi_item sbi_type_image sbi_new sbi_transition" id="sbi_17964314249762555" data-date="1745586220">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/p/DI3tuuxNIVM/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/491495687_3665186280447865_6580415013013702963_n.heic?stp=dst-jpg_e35_tt6&#038;_nc_cat=105&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=7hyjSPobz0EQ7kNvwFFQ9_J&#038;_nc_oc=Adnc9ex4T3y4wmCuo3e5-N_OBCquaLwDFWrRjI7taj4_VDLRbAfu5WjX_8oiLWlVk0o&#038;_nc_zt=23&#038;_nc_ht=scontent-fra3-1.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfHPxjISY-3hAZzeOixNtiA4CmcdNfDnBjVfwjQRUa3KqA&#038;oe=68179B2A" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491495687_3665186280447865_6580415013013702963_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=7hyjSPobz0EQ7kNvwFFQ9_J&amp;_nc_oc=Adnc9ex4T3y4wmCuo3e5-N_OBCquaLwDFWrRjI7taj4_VDLRbAfu5WjX_8oiLWlVk0o&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHPxjISY-3hAZzeOixNtiA4CmcdNfDnBjVfwjQRUa3KqA&amp;oe=68179B2A&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491495687_3665186280447865_6580415013013702963_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=7hyjSPobz0EQ7kNvwFFQ9_J&amp;_nc_oc=Adnc9ex4T3y4wmCuo3e5-N_OBCquaLwDFWrRjI7taj4_VDLRbAfu5WjX_8oiLWlVk0o&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHPxjISY-3hAZzeOixNtiA4CmcdNfDnBjVfwjQRUa3KqA&amp;oe=68179B2A&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491495687_3665186280447865_6580415013013702963_n.heiclow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491495687_3665186280447865_6580415013013702963_n.heicfull.webp&quot;}">
-            <span class="sbi-screenreader">✨ FÊTE DE DÉBUT DE SAISON ✨
-📍 1 rue de la</span>
-            	                    <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="✨ FÊTE DE DÉBUT DE SAISON ✨
-📍 1 rue de la Tuilerie, 68520 Burnhaupt-le-Haut
-📅 Vendredi 16 mai à partir de 18h30 toute la soirée
-💸 5€ entrée 
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select the elements we'll be animating
+            const leftBracket = document.querySelector('.left-bracket');
+            const rightBracket = document.querySelector('.right-bracket');
+            const empowerText = document.querySelector('.text-reveal');
 
-L’été pointe le bout de son nez… et on compte bien le célébrer comme il se doit ! 🌞
-Rejoignez-nous pour une soirée sous les guirlandes pleine de sourires, de sons envoûtants, et de saveurs à partager.
+            // Set initial state: brackets start very close to the center, text is hidden
+            // Adjusted 'x' values back to pixel units
+            gsap.set(leftBracket, { x: 300 });  // Move left bracket further right from its natural position
+            gsap.set(rightBracket, { x: -300 }); // Move right bracket further left from its natural position
+            gsap.set(empowerText, { opacity: 0 }); // Ensure text is hidden initially
 
-🎶 Côté musique, préparez-vous à bouger !
-DOUM TAKA vous fera voyager à travers l’Océan Indien, l’Afrique, l’Orient et les Caraïbes – une explosion de rythmes World music à la sauce réunionnaise et alsacienne.
-🍽️ Food truck en self-service
-🍹 Boissons fraîches à partager
-🌍 Covoiturage &amp; vélo encouragés – la planète vous dit merci
+            // Initialize a GSAP timeline for sequencing animations
+            // 'defaults' sets common properties for all animations in this timeline
+            const tl = gsap.timeline({
+                defaults: {
+                    ease: "power2.out", // Smooth easing for the animations
+                    duration: 0.8 // Default duration for each animation step
+                }
+            });
 
-Entre amis, en famille ou en solo, venez trinquer, danser, et lancer cette saison comme il se doit !
-⏳ Pas de réservation, premiers arrivés, premiers servis.
+            // Step 1: Brackets open up from their initial close position
+            // Added a 0.4-second delay before this animation starts
+            tl.to(leftBracket, { x: -60, duration: 1, delay: 0.4 }) // Move left bracket further left to open, with a 0.4s delay
+              .to(rightBracket, { x: 60, duration: 1 }, "<") // Move right bracket further right to open, simultaneously
 
-On vous attend avec impatience, et beaucoup de bonne humeur 💛
-#GuinguetteTime #FêteDeSaison #LiveMusic #BurnhauptLeHaut #DoumTaka #CachouCachou #VenezCommeVousÊtes">
-        </a>
-    </div>
-</div><div class="sbi_item sbi_type_image sbi_new sbi_transition" id="sbi_17986827269802502" data-date="1744962805">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/p/DIlIqRcNL2_/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/491056727_1664200867820809_6588225014007302755_n.heic?stp=dst-jpg_e35_tt6&#038;_nc_cat=101&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=qo30DwUmQ0wQ7kNvwFthCNi&#038;_nc_oc=AdlXzBnHH-vrGTZk3HyxVjT6-h4VaxRq3fszW6Alr0BNKDf5YHTGcgQwX3Sp_39AZoc&#038;_nc_zt=23&#038;_nc_ht=scontent-fra3-1.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfHnA9RLe7cDxf05jIO5UhIwcNl4jN9F_PoG8Zo5zbEvBg&#038;oe=6817A52E" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491056727_1664200867820809_6588225014007302755_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=qo30DwUmQ0wQ7kNvwFthCNi&amp;_nc_oc=AdlXzBnHH-vrGTZk3HyxVjT6-h4VaxRq3fszW6Alr0BNKDf5YHTGcgQwX3Sp_39AZoc&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHnA9RLe7cDxf05jIO5UhIwcNl4jN9F_PoG8Zo5zbEvBg&amp;oe=6817A52E&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491056727_1664200867820809_6588225014007302755_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=qo30DwUmQ0wQ7kNvwFthCNi&amp;_nc_oc=AdlXzBnHH-vrGTZk3HyxVjT6-h4VaxRq3fszW6Alr0BNKDf5YHTGcgQwX3Sp_39AZoc&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfHnA9RLe7cDxf05jIO5UhIwcNl4jN9F_PoG8Zo5zbEvBg&amp;oe=6817A52E&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491056727_1664200867820809_6588225014007302755_n.heiclow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491056727_1664200867820809_6588225014007302755_n.heicfull.webp&quot;}">
-            <span class="sbi-screenreader">🌿 La permaculture, c’est pas (juste) du jardi</span>
-            	                    <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="🌿 La permaculture, c’est pas (juste) du jardinage. 🌿
-C’est une méthode claire, logique et adaptable pour concevoir des systèmes durables — au jardin, à la maison, dans vos projets pro ou perso.
+            // Step 2: Reveal the text while brackets are opening
+              .to(empowerText, { opacity: 1, duration: 0.6 }, "-=0.5") // Fade in text, starting 0.5 seconds before brackets finish opening
 
-🔧 Atelier Introduction à la Permaculture
-Une journée complète pour comprendre les bases du permaculture design : principes, éthiques, outils concrets et ateliers pratiques.
-
-Accessible, structuré, sans blabla inutile — avec une bonne dose d’échanges et de terrain.
-
-Vous repartez avec :
-✔ Une vision claire de la méthode
-✔ Des outils pour démarrer vos projets sereinement
-✔ Un livret complet pour approfondir chez vous
-
-📍 Burnhaupt-le-Haut
-📅 Date : à venir | 🕘 9h - 18h
-💶 120 € – café d’accueil, repas, apéro &amp; livret inclus
-
-🎟️ Réservation indispensable – via notre plateforme de réservation. Sélectionnez la date et l&#039;expérience. N&#039;hésitez pas à me contacter pour plus d&#039;informations. 
-
-https://bookings.zenchef.com/results?rid=366091&amp;pid=1001&amp;shxpid=61164 
-
-Une journée à la fois dense, conviviale et motivante pour passer de l’envie à l’action.
-
-#MéthodePermaculture #ProjetDeVie #ÉcologiePratique
-#BurnhauptleHaut #FormationPermaculture #PermacultureDesign #AtelierPermaculture #PermacultureFrance">
-        </a>
-    </div>
-</div><div class="sbi_item sbi_type_video sbi_new sbi_transition" id="sbi_18090168304593079" data-date="1744628241">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/reel/DIbJM3ZtBDH/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra3-1.cdninstagram.com/v/t51.75761-15/491238924_17955896795927736_4125299239358459253_n.jpg?stp=dst-jpg_e35_tt6&#038;_nc_cat=108&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=ZgONz7kqrd8Q7kNvwFB5Ul_&#038;_nc_oc=Adn7cTrj0Ojd9n0zrYKVdsfDosuLc2b_Rl11P4fR48ZGI1rH8YxHlVPeqQl7o5f7hgw&#038;_nc_zt=23&#038;_nc_ht=scontent-fra3-1.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfFKOQvy09jDokF1xUQQ2eZVny4FbZOgGue2vfCl_3s32w&#038;oe=6817B984" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.75761-15\/491238924_17955896795927736_4125299239358459253_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=ZgONz7kqrd8Q7kNvwFB5Ul_&amp;_nc_oc=Adn7cTrj0Ojd9n0zrYKVdsfDosuLc2b_Rl11P4fR48ZGI1rH8YxHlVPeqQl7o5f7hgw&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfFKOQvy09jDokF1xUQQ2eZVny4FbZOgGue2vfCl_3s32w&amp;oe=6817B984&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.75761-15\/491238924_17955896795927736_4125299239358459253_n.jpg?stp=dst-jpg_e35_tt6&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=ZgONz7kqrd8Q7kNvwFB5Ul_&amp;_nc_oc=Adn7cTrj0Ojd9n0zrYKVdsfDosuLc2b_Rl11P4fR48ZGI1rH8YxHlVPeqQl7o5f7hgw&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfFKOQvy09jDokF1xUQQ2eZVny4FbZOgGue2vfCl_3s32w&amp;oe=6817B984&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491238924_17955896795927736_4125299239358459253_nlow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491238924_17955896795927736_4125299239358459253_nfull.webp&quot;}">
-            <span class="sbi-screenreader">Pâques arrive à grands pas et nos poules sont en</span>
-            	        <svg style="color: rgba(255,255,255,1)" class="svg-inline--fa fa-play fa-w-14 sbi_playbtn" aria-label="Play" aria-hidden="true" data-fa-processed="" data-prefix="fa" data-icon="play" role="presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path></svg>            <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="Pâques arrive à grands pas et nos poules sont en plein contrôle qualité !
-Des œufs bio, pondus avec amour par des poules heureuses, vous attendent à la guinguette.
-
-🌿 Jusqu’à l’ouverture le 15 mai, on vous propose : 🥚 12 œufs pour 5€
-🥚 30 œufs pour 12€
-
-Envoyez-nous un petit message pour réserver et venir les récupérer à la guinguette ⛱️
-#œufsbio #pâques2025 #guinguettevibes #locavore #farmtotable">
-        </a>
-    </div>
-</div><div class="sbi_item sbi_type_image sbi_new sbi_transition" id="sbi_17916539978980128" data-date="1744481586">
-    <div class="sbi_photo_wrap">
-        <a class="sbi_photo" href="https://www.instagram.com/p/DIWyzp4Nz0Y/" target="_blank" rel="noopener nofollow" data-full-res="https://scontent-fra3-1.cdninstagram.com/v/t51.29350-15/491441140_1006031937763756_2839401292579463878_n.heic?stp=dst-jpg_e35_tt6&#038;_nc_cat=101&#038;ccb=1-7&#038;_nc_sid=18de74&#038;_nc_ohc=nIcqcEneFEEQ7kNvwGT3fQ2&#038;_nc_oc=AdnJLCrGpH1Zbnnf4rI0iPF8-PAVF6cJAFKN7IaJ32fhArMc6KJIZ7QGMLqDvR1ySJ4&#038;_nc_zt=23&#038;_nc_ht=scontent-fra3-1.cdninstagram.com&#038;edm=ANo9K5cEAAAA&#038;_nc_gid=wkLGJexOdVrQpigTBLf4uA&#038;oh=00_AfFucDo3LaYtOShEiqJwuULKtd7leTb4NWE_ZANfVgmu2Q&#038;oe=6817BECA" data-img-src-set="{&quot;d&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491441140_1006031937763756_2839401292579463878_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=nIcqcEneFEEQ7kNvwGT3fQ2&amp;_nc_oc=AdnJLCrGpH1Zbnnf4rI0iPF8-PAVF6cJAFKN7IaJ32fhArMc6KJIZ7QGMLqDvR1ySJ4&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfFucDo3LaYtOShEiqJwuULKtd7leTb4NWE_ZANfVgmu2Q&amp;oe=6817BECA&quot;,&quot;150&quot;:&quot;https:\/\/scontent-fra3-1.cdninstagram.com\/v\/t51.29350-15\/491441140_1006031937763756_2839401292579463878_n.heic?stp=dst-jpg_e35_tt6&amp;_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=nIcqcEneFEEQ7kNvwGT3fQ2&amp;_nc_oc=AdnJLCrGpH1Zbnnf4rI0iPF8-PAVF6cJAFKN7IaJ32fhArMc6KJIZ7QGMLqDvR1ySJ4&amp;_nc_zt=23&amp;_nc_ht=scontent-fra3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;_nc_gid=wkLGJexOdVrQpigTBLf4uA&amp;oh=00_AfFucDo3LaYtOShEiqJwuULKtd7leTb4NWE_ZANfVgmu2Q&amp;oe=6817BECA&quot;,&quot;320&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491441140_1006031937763756_2839401292579463878_n.heiclow.webp&quot;,&quot;640&quot;:&quot;https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/491441140_1006031937763756_2839401292579463878_n.heicfull.webp&quot;}">
-            <span class="sbi-screenreader">On y est, les premiers légumes sont plantés d&#039;ic</span>
-            	                    <img src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/img/placeholder.png" alt="On y est, les premiers légumes sont plantés d&#039;ici quelques semaines nous pourrons vous concocter les premiers paniers.">
-        </a>
-    </div>
-</div>    </div>
-
-	<div id="sbi_load" >
-
-	
-	
-</div>
-
-	    <span class="sbi_resized_image_data" data-feed-id="*2" data-resized="{&quot;17916539978980128&quot;:{&quot;id&quot;:&quot;491441140_1006031937763756_2839401292579463878_n.heic&quot;,&quot;ratio&quot;:&quot;1.00&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;},&quot;18090168304593079&quot;:{&quot;id&quot;:&quot;491238924_17955896795927736_4125299239358459253_n&quot;,&quot;ratio&quot;:&quot;0.56&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;},&quot;17986827269802502&quot;:{&quot;id&quot;:&quot;491056727_1664200867820809_6588225014007302755_n.heic&quot;,&quot;ratio&quot;:&quot;0.80&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;},&quot;17964314249762555&quot;:{&quot;id&quot;:&quot;491495687_3665186280447865_6580415013013702963_n.heic&quot;,&quot;ratio&quot;:&quot;1.00&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;},&quot;18033615473640181&quot;:{&quot;id&quot;:&quot;494007481_1211176954061654_1271703160935122761_n.heic&quot;,&quot;ratio&quot;:&quot;1.00&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;},&quot;18082303513673317&quot;:{&quot;id&quot;:&quot;493991982_1881839415554297_8642255785359352791_n.heic&quot;,&quot;ratio&quot;:&quot;1.00&quot;,&quot;sizes&quot;:{&quot;full&quot;:640,&quot;low&quot;:320,&quot;thumb&quot;:150},&quot;extension&quot;:&quot;.webp&quot;}}">
-	</span>
-	</div>
-
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-16e6f80 e-con-full e-flex elementor-invisible e-con e-child" data-id="16e6f80" data-element_type="container" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-		<div class="elementor-element elementor-element-f9db707 e-con-full e-flex e-con e-child" data-id="f9db707" data-element_type="container">
-				<div class="elementor-element elementor-element-ed634f4 elementor-widget elementor-widget-heading" data-id="ed634f4" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;none&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="https://www.lesjardinsdelabriquette.fr/la-ferme/">La Ferme</a></h2>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-61bec37 e-con-full e-flex e-con e-child" data-id="61bec37" data-element_type="container">
-				<div class="elementor-element elementor-element-c28a9ed elementor-widget elementor-widget-heading" data-id="c28a9ed" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">nos actualités</h2>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-53bc63c e-con-full e-flex e-con e-child" data-id="53bc63c" data-element_type="container">
-				<div class="elementor-element elementor-element-13df8f1 elementor-widget elementor-widget-heading" data-id="13df8f1" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default"><a href="https://www.lesjardinsdelabriquette.fr/plus-dinfos/" target="_blank">Plus d'infos</a></h2>				</div>
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-13f7980 e-con-full e-flex e-con e-child" data-id="13f7980" data-element_type="container">
-		<div class="elementor-element elementor-element-00eadf4 e-con-full e-flex e-con e-child" data-id="00eadf4" data-element_type="container">
-				<div class="elementor-element elementor-element-16e26aa6 animated-slow e-transform elementor-view-default elementor-invisible elementor-widget elementor-widget-icon" data-id="16e26aa6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;,&quot;_transform_scale_effect&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_scale_effect_laptop&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_scale_effect_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]},&quot;_transform_scale_effect_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="icon.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-icon-wrapper">
-			<a class="elementor-icon elementor-animation-shrink" href="#top">
-			<svg aria-hidden="true" class="e-font-icon-svg e-fas-arrow-up" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg>			</a>
-		</div>
-						</div>
-				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-0c55d90 e-con-full e-flex e-con e-child" data-id="0c55d90" data-element_type="container">
-		<div class="elementor-element elementor-element-638fc00e e-con-full e-flex e-con e-child" data-id="638fc00e" data-element_type="container">
-				<div class="elementor-element elementor-element-a516b3b elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="a516b3b" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<p class="elementor-heading-title elementor-size-default">© 2025 All Rights Reserved.</p>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-38ef3fa e-con-full e-flex e-con e-child" data-id="38ef3fa" data-element_type="container">
-				<div class="elementor-element elementor-element-c448ef2 elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="c448ef2" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<p class="elementor-heading-title elementor-size-default"><a href="https://maps.app.goo.gl/KMKiERMGm2oE1QQV9" target="_blank">1 rue de la Tuilerie
-68520 Burnhaupt-le-haut
-France</a></p>				</div>
-				</div>
-				</div>
-		<div class="elementor-element elementor-element-ca6f4b1 e-con-full e-flex e-con e-child" data-id="ca6f4b1" data-element_type="container">
-				<div class="elementor-element elementor-element-1b6dc73 elementor-widget__width-inherit elementor-widget elementor-widget-heading" data-id="1b6dc73" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<p class="elementor-heading-title elementor-size-default"><a href="http://www.evihellebaut.com">Site credit</a></p>				</div>
-				</div>
-				</div>
-				</div>
-				</div>
-				</footer>
-		
-<script type="speculationrules">
-{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/hello-elementor\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
-</script>
-<!-- Instagram Feed JS -->
-<script type="text/javascript">
-var sbiajaxurl = "https://www.lesjardinsdelabriquette.fr/wp-admin/admin-ajax.php";
-</script>
-			<script>
-				const lazyloadRunObserver = () => {
-					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
-					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
-						entries.forEach( ( entry ) => {
-							if ( entry.isIntersecting ) {
-								let lazyloadBackground = entry.target;
-								if( lazyloadBackground ) {
-									lazyloadBackground.classList.add( 'e-lazyloaded' );
-								}
-								lazyloadBackgroundObserver.unobserve( entry.target );
-							}
-						});
-					}, { rootMargin: '200px 0px 200px 0px' } );
-					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
-						lazyloadBackgroundObserver.observe( lazyloadBackground );
-					} );
-				};
-				const events = [
-					'DOMContentLoaded',
-					'elementor/lazyload/observe',
-				];
-				events.forEach( ( event ) => {
-					document.addEventListener( event, lazyloadRunObserver );
-				} );
-			</script>
-			<script src="https://www.lesjardinsdelabriquette.fr/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=3.3.0" id="hello-theme-frontend-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1" id="smartmenus-js"></script>
-<script id="sbiscripts-js-extra">
-var sb_instagram_js_options = {"font_method":"svg","placeholder":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png","resized_url":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/","ajax_url":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-admin\/admin-ajax.php"};
-</script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.8.0" id="sbiscripts-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/admin/assets/js/elementor-preview.js?ver=6.8.0" id="elementor-preview-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5" id="swiper-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.28.3" id="e-sticky-js"></script>
-<script id="sbi_scripts-js-extra">
-var sb_instagram_js_options = {"font_method":"svg","resized_url":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/sb-instagram-feed-images\/","placeholder":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/plugins\/instagram-feed\/img\/placeholder.png","ajax_url":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-admin\/admin-ajax.php"};
-</script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/instagram-feed/js/sbi-scripts.min.js?ver=6.8.0" id="sbi_scripts-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.28.3" id="elementor-pro-webpack-runtime-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.28.4" id="elementor-webpack-runtime-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.28.4" id="elementor-frontend-modules-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-</script>
-<script id="elementor-pro-frontend-js-before">
-var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-admin\/admin-ajax.php","nonce":"f8add92283","urls":{"assets":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":false},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"fr_FR","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
-</script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.28.3" id="elementor-pro-frontend-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
-<script id="elementor-frontend-js-before">
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Partager sur Facebook","shareOnTwitter":"Partager sur Twitter","pinIt":"L\u2019\u00e9pingler","download":"T\u00e9l\u00e9charger","downloadImage":"T\u00e9l\u00e9charger une image","fullscreen":"Plein \u00e9cran","zoom":"Zoom","share":"Partager","playVideo":"Lire la vid\u00e9o","previous":"Pr\u00e9c\u00e9dent","next":"Suivant","close":"Fermer","a11yCarouselPrevSlideMessage":"Diapositive pr\u00e9c\u00e9dente","a11yCarouselNextSlideMessage":"Diapositive suivante","a11yCarouselFirstSlideMessage":"Ceci est la premi\u00e8re diapositive","a11yCarouselLastSlideMessage":"Ceci est la derni\u00e8re diapositive","a11yCarouselPaginationBulletMessage":"Aller \u00e0 la diapositive"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Portrait mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Paysage","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablette en mode portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablette en mode paysage","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Portable","value":1366,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"\u00c9cran large","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.28.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"container":true,"e_local_google_fonts":true,"theme_builder_v2":true,"hello-theme-header-footer":true,"landing-pages":true,"nested-elements":true,"editor_v2":true,"pages_panel":true,"e_element_cache":true,"home_screen":true,"editor_events":true,"improved_page_actions_layout":true,"mega-menu":true},"urls":{"assets":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"cff81b3333"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"body_background_background":"classic","active_breakpoints":["viewport_mobile","viewport_tablet","viewport_laptop"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","hello_header_logo_type":"logo","hello_header_menu_layout":"horizontal"},"post":{"id":1523,"title":"La%20Ferme%20-%20Les%20Jardins%20de%20la%20Briquette","excerpt":"Ceci nous a amen\u00e9 (et reli\u00e9es) autour de la permaculture: un outil de design qui, tout en imitant la nature, nous permet de collaborer avec elle au lieu de l\u2019exploiter et de la d\u00e9truire. Bas\u00e9 sur ces principes, on a d\u00e9cid\u00e9 de transformer un coin de terre pr\u00eat\u00e9 par la famille en laboratoire vivant et aire de jeux o\u00f9 tester, apprendre, vivre et grandir.","featuredImage":"https:\/\/www.lesjardinsdelabriquette.fr\/wp-content\/uploads\/2024\/05\/Violetta-684x1024.jpg"}};
-</script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.28.4" id="elementor-frontend-js"></script>
-<script src="https://www.lesjardinsdelabriquette.fr/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.28.3" id="pro-elements-handlers-js"></script>
-
-<script defer src="/.cloud/rum/beacon.js?v=1.0.0" class="elementor-browser-metrics" data-request-info='{"traceparent":"00-93881ed01b7f2e080000001746027445-93881ed01b7f2e08-01","version":"1.0.0","endpoint":"/.cloud/rum/analytics"}'></script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93881ed01b7f2e08',t:'MTc0NjAyNzQ0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"93881ed01b7f2e08","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"version":"2025.4.0-1-g37f21b1","token":"df67842450844fa185a3a8a88950c8ba"}' crossorigin="anonymous"></script>
+            // Step 3: Brackets close back around the text, but leave space
+            // They move back to an 'x' position that creates the desired gap
+              .to(leftBracket, { x: -10, duration: 0.7 }, ">-0.4") // Move left bracket back to a position with space
+              .to(rightBracket, { x: 10, duration: 0.7 }, "<"); // Move right bracket back to a position with space, simultaneously
+        });
+    </script>
 </body>
 </html>
